@@ -3,7 +3,7 @@
 
 int main()
 {
-    uint8_t status = 0x08;  
+    uint8_t status = 0x08;   // 0000 1000
 
     if (status & (1 << 3))
         printf("Bit 3 is SET\n");
