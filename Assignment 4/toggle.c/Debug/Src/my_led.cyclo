@@ -1,0 +1,4 @@
+../Src/my_led.c:10:6:led_init	1
+../Src/my_led.c:26:6:led_toggle	1
+../Src/my_led.c:31:6:switch_init	1
+../Src/my_led.c:48:5:switch_status	2

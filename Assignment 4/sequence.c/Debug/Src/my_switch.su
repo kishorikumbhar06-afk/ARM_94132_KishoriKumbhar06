@@ -1,0 +1,4 @@
+../Src/my_switch.c:32:6:switch_init	4	static
+../Src/my_switch.c:100:5:switch_status	4	static
+../Src/my_switch.c:144:5:switch_read	4	static
+../Src/my_switch.c:164:5:switch_press_count	8	static
