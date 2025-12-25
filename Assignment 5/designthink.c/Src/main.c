@@ -16,56 +16,34 @@
  ******************************************************************************
  */
 
+
 #include "my_led.h"
-#include"ext_intr.h"
+#include "ext_intr.h"
 
 #if !defined(__SOFT_FP__) && defined(__ARM_FP)
   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
 #endif
 
-
+extern volatile int f;
+extern volatile int led;
 
 int main(void)
 {
 	led_init();
+	extint_init();
 	while(1)
 	{
-		led_on(12);
-		DelayMs(200);
-		led_off(12);
+	if(f == 1)
+	{
+		led ^= 1;
+		//led_toggle(14);
+		//DelayMs(250);
+		if(led)
+			led_on(14);
+		else
+			led_off(14);
 
+		f = 0;
+	}
 	}
 }
-/*
-void led_init(void)
-{
-	//0. enable clock for GPIOD in AHB1
-	RCC->AHB1ENR |= BV(3);
-	//1. select mode as output
-	GPIOD->MODER &= ~(BV(25) | BV(27) | BV(29) | BV(31));
-	GPIOD->MODER |= BV(24) | BV(26) | BV(28) | BV(30);
-	//2. select type as push pull
-	GPIOD->OTYPER &= ~(BV(12) | BV(13) | BV(14) | BV(15));
-	//3. select speed as low
-	GPIOD->OSPEEDR &= ~(BV(25) | BV(27) | BV(29) | BV(31));
-	GPIOD->OSPEEDR &= ~(BV(24) | BV(26) | BV(28) | BV(30));
-	//4. select pull up/down as no
-	GPIOD->PUPDR &= ~(BV(25) | BV(27) | BV(29) | BV(31));
-	GPIOD->PUPDR &= ~(BV(24) | BV(26) | BV(28) | BV(30));
-}
-void led_on(void)
-{
-	GPIOD->ODR |= BV(12)| BV(13) | BV(14) | BV(15);
-}
-void led_off(void)
-{
-	GPIOD->ODR &= ~(BV(12)| BV(13) | BV(14) | BV(15));
-}
-
-*/
-
-
-
-
-
-

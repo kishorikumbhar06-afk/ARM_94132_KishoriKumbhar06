@@ -59,8 +59,8 @@ all: main-build
 main-build: designthink.c.elf secondary-outputs
 
 # Tool invocations
-designthink.c.elf designthink.c.map: $(OBJS) $(USER_OBJS) D:\Kishori\ Kumbhar\designthink.c\STM32G473QETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "designthink.c.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\Kishori Kumbhar\designthink.c\STM32G473QETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="designthink.c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+designthink.c.elf designthink.c.map: $(OBJS) $(USER_OBJS) C:\Users\Admin\Desktop\Kishori\ Kumbhar\ARM_94132_KishoriKumbhar06\Assignment\ 5\designthink.c\STM32G473QETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "designthink.c.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\Admin\Desktop\Kishori Kumbhar\ARM_94132_KishoriKumbhar06\Assignment 5\designthink.c\STM32G473QETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="designthink.c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

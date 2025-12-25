@@ -7,7 +7,6 @@
 
 #include "my_led.h"
 
-
 void led_init(void)
 {
 	//0. enable clock for GPIOD in AHB1
@@ -38,4 +37,3 @@ void led_toggle(uint8_t pin)
 	LED_PORT->ODR ^= BV(pin);
 	DelayMs(2000);
 }
-

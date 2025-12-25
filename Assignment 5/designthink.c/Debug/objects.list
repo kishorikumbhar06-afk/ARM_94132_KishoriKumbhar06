@@ -1,3 +1,4 @@
+"./Src/ext_intr.o"
 "./Src/itm.o"
 "./Src/main.o"
 "./Src/my_led.o"

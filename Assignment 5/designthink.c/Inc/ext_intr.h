@@ -10,5 +10,4 @@
 
 void extint_init(void);
 
-
 #endif /* EXT_INTR_H_ */

@@ -5,6 +5,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Src/ext_intr.c \
 ../Src/itm.c \
 ../Src/main.c \
 ../Src/my_led.c \
@@ -12,6 +13,7 @@ C_SRCS += \
 ../Src/sysmem.c 
 
 OBJS += \
+./Src/ext_intr.o \
 ./Src/itm.o \
 ./Src/main.o \
 ./Src/my_led.o \
@@ -19,6 +21,7 @@ OBJS += \
 ./Src/sysmem.o 
 
 C_DEPS += \
+./Src/ext_intr.d \
 ./Src/itm.d \
 ./Src/main.d \
 ./Src/my_led.d \
@@ -33,7 +36,7 @@ Src/%.o Src/%.su Src/%.cyclo: ../Src/%.c Src/subdir.mk
 clean: clean-Src
 
 clean-Src:
-	-$(RM) ./Src/itm.cyclo ./Src/itm.d ./Src/itm.o ./Src/itm.su ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/my_led.cyclo ./Src/my_led.d ./Src/my_led.o ./Src/my_led.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
+	-$(RM) ./Src/ext_intr.cyclo ./Src/ext_intr.d ./Src/ext_intr.o ./Src/ext_intr.su ./Src/itm.cyclo ./Src/itm.d ./Src/itm.o ./Src/itm.su ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/my_led.cyclo ./Src/my_led.d ./Src/my_led.o ./Src/my_led.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
 
 .PHONY: clean-Src
 
